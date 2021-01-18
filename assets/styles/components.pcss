@@ -1,0 +1,15 @@
+.button-action {
+  @apply bg-primary duration-150 font-bold font-text1 hover:bg-primary-hover px-6 py-4 rounded text-black transition-all;
+}
+
+.title-decorator {
+  @apply relative text-black;
+
+  &::after,
+  &::before {
+    @apply absolute w-title-decorator h-title-decorator bg-primary block -z-10 bottom-0 -left-1;
+
+    content: '';
+    transform: rotateZ(-1deg);
+  }
+}
