@@ -1,6 +1,11 @@
 <template>
   <section class="app">
-    <img class="app__image" src="~/assets/images/phone.png" alt="phone" />
+    <img
+      class="app__image"
+      src="~/assets/images/phone.png"
+      alt="phone"
+      data-aos="fade-up"
+    />
     <div class="app__container">
       <div class="app__info">
         <h2 class="app__title" data-aos="fade-up">
@@ -10,7 +15,11 @@
         <div class="app__steps">
           <LeftArrow class="app__arrow app__arrow--left" />
           <RighttArrow class="app__arrow app__arrow--right" />
-          <div class="app__step app__step--1">
+          <div
+            class="app__step app__step--1"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             <span class="app__step-number">01</span>
             <p class="app__step-title">Solicita rápido</p>
             <p class="app__step-description">
@@ -18,7 +27,11 @@
               nascetur ridiculus mus.
             </p>
           </div>
-          <div class="app__step app__step--2">
+          <div
+            class="app__step app__step--2"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <span class="app__step-number">02</span>
             <p class="app__step-title">Solicita rápido</p>
             <p class="app__step-description">
@@ -26,7 +39,11 @@
               nascetur ridiculus mus.
             </p>
           </div>
-          <div class="app__step app__step--3">
+          <div
+            class="app__step app__step--3"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
             <span class="app__step-number">03</span>
             <p class="app__step-title">Solicita rápido</p>
             <p class="app__step-description">

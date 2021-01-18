@@ -14,7 +14,7 @@
         <div class="about__container">
           <div>
             <h2 class="about__title" data-aos="fade-up">¿Quién es Foodies?</h2>
-            <p class="about__info">
+            <p class="about__info" data-aos="fade-up">
               Elit irure ad nulla id elit laborum nostrud mollit irure. Velit
               reprehenderit sunt nulla enim aliquip duis tempor est culpa fugiat
               consequat culpa consectetur Lorem. Reprehenderit dolore culpa

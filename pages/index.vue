@@ -5,7 +5,7 @@
     <HomeLocations class="home__locations" data-aos="fade-up" />
     <HomeTestimonials class="home__testimonials" data-aos="fade-up" />
     <HomeContact class="home__contact" data-aos="fade-up" />
-    <HomeMobileApp class="home__app" data-aos="fade-up" />
+    <HomeMobileApp class="home__app" />
   </main>
 </template>
 
