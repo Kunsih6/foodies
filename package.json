@@ -9,7 +9,10 @@
     "generate": "nuxt generate",
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint:style": "stylelint **/*.{vue,css} --ignore-path .gitignore",
-    "lint": "yarn lint:js && yarn lint:style"
+    "lint": "yarn lint:js && yarn lint:style",
+    "predeploy:merge-deps": "cd functions && node merge-dependencies.js && npm install && cd ..",
+    "predeploy:functions": "rm -rf functions/.nuxt && yarn build && mkdir -p functions/.nuxt/dist && cp -r .nuxt/dist/ functions/.nuxt/ && babel nuxt.config.js --out-file functions/nuxt.config.js",
+    "predeploy:hosting": "rm -rf public/* && mkdir -p public/nuxt && cp -r functions/.nuxt/dist/client/ public/nuxt && cp -a static/. public/"
   },
   "lint-staged": {
     "*.{js,vue}": "eslint",
@@ -33,6 +36,9 @@
     "vue-carousel": "^0.18.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
     "@nuxtjs/eslint-config": "^5.0.0",
@@ -42,6 +48,7 @@
     "@nuxtjs/tailwindcss": "^3.4.2",
     "autoprefixer": "^9",
     "babel-eslint": "^10.1.0",
+    "babel-plugin-add-module-exports": "^1.0.4",
     "eslint": "^7.18.0",
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-nuxt": "^2.0.0",

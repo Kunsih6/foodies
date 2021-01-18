@@ -1,30 +1,29 @@
-name: ci
+name: Deploy to firebase
 
 on:
+  workflow_dispatch:
+    branches:
+      - main
   push:
     branches:
       - main
-      - master
-  pull_request:
-    branches:
-      - main
-      - master
 
 jobs:
-  ci:
+  cd:
+    environment: cd
     runs-on: ${{ matrix.os }}
 
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [14]
+        node: [12]
 
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@master
 
       - name: Setup node env 🏗
-        uses: actions/setup-node@v2.1.2
+        uses: actions/setup-node@v2.1.4
         with:
           node-version: ${{ matrix.node }}
 
@@ -40,10 +39,16 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
-
       - name: Install dependencies 👨🏻‍💻
         run: yarn
 
       - name: Run linter 👀
         run: yarn lint
 
+      - name: Deploy to firebase 🔥
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting,functions
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          MAPS: ${{ secrets.MAPS }}
