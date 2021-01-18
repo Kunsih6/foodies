@@ -27,19 +27,18 @@
         </div>
         <LocationNotFound v-else />
       </div>
-      <div v-if="locations.length > 0" class="locations__map">
-        <client-only>
-          <gmap-map
-            ref="map"
-            :center="mapCenter"
-            :options="mapOptions"
-            :zoom="mapZoom"
-            class="h-96 lg:h-full w-full"
-          >
-            <gmap-marker :position="mapCenter" />
-          </gmap-map>
-        </client-only>
-      </div>
+      <GMap
+        v-if="locations.length > 0"
+        language="es"
+        :center="mapCenter"
+        :options="mapOptions"
+        :zoom="mapZoom"
+        class="locations__map"
+      >
+        <GMapMarker :position="mapCenter" @click="currentLocation = location" />
+      </GMap>
+      <!-- <div v-if="locations.length > 0" class="locations__map">
+      </div> -->
     </div>
   </section>
 </template>
@@ -133,7 +132,11 @@ export default {
 @screen md {
   .locations {
     &__map {
-      @apply block mt-8;
+      @apply block mt-8 h-96 lg:h-full;
+
+      >>> * {
+        @apply h-full;
+      }
     }
   }
 }

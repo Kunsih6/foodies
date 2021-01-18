@@ -1,8 +1,13 @@
-# foodies
+# Foodies
 
 ## Build Setup
 
 ```bash
+This project was created using node v14.15.4.
+
+To run the project you need to add .env file to the project root directory with the google maps key
+# MAPS={your key}
+
 # install dependencies
 $ yarn install
 

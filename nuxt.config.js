@@ -46,7 +46,6 @@ export default {
     '~/plugins/filters',
     '~/plugins/aos.client',
     '~/plugins/vue-carousel.client',
-    '~/plugins/vue2-google-maps',
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -71,6 +70,12 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    [
+      'nuxt-gmaps',
+      {
+        key: process.env.MAPS,
+      },
+    ],
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -101,6 +106,5 @@ export default {
         'postcss-nested': {},
       },
     },
-    transpile: ['vue2-google-maps'],
   },
 }
