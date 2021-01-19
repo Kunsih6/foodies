@@ -29,6 +29,7 @@
       </div>
       <GMap
         v-if="locations.length > 0"
+        ref="gMap"
         language="es"
         :center="mapCenter"
         :options="mapOptions"
@@ -88,6 +89,13 @@ export default {
     },
     searchQuery(val) {
       this.search()
+    },
+    currentLocation() {
+      if (this.locations !== [] && this.locations !== undefined) {
+        this.$nextTick(() => {
+          this.$refs.gMap.initMap()
+        })
+      }
     },
   },
   methods: {

@@ -41,3 +41,8 @@ $ yarn start
 # generate static project
 $ yarn generate
 ```
+
+## Observations
+
+- Due the time limitation, there are some code improvements that can be done, like create reusable components; and maybe there will be some minor visual issues.
+- This website is a serverless application, so the initial time of loading may be a bit longer than expected.
