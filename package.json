@@ -29,7 +29,7 @@
     "@nuxtjs/pwa": "^3.3.4",
     "@nuxtjs/svg": "^0.1.12",
     "aos": "^3.0.0-beta.6",
-    "core-js": "^3.8.2",
+    "core-js": "^3.10.1",
     "moment": "^2.29.1",
     "nuxt": "^2.14.12",
     "nuxt-gmaps": "^1.2.10",
